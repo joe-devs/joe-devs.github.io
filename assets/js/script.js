@@ -157,3 +157,122 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// GitHub Markdown notes reader
+const noteLinks = document.querySelectorAll("[data-note-url]");
+const notesList = document.querySelector("[data-notes-list]");
+const noteReader = document.querySelector("[data-note-reader]");
+const noteReaderTitle = document.querySelector("[data-note-reader-title]");
+const noteReaderContent = document.querySelector("[data-note-reader-content]");
+const noteBackBtn = document.querySelector("[data-note-back]");
+
+const escapeHtml = function (value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+const markdownToHtml = function (markdown) {
+  let safe = escapeHtml(markdown);
+
+  safe = safe.replace(/```([\s\S]*?)```/g, function (_, code) {
+    return `<pre><code>${code.trim()}</code></pre>`;
+  });
+
+  safe = safe
+    .replace(/^### (.*$)/gim, "<h4>$1</h4>")
+    .replace(/^## (.*$)/gim, "<h3>$1</h3>")
+    .replace(/^# (.*$)/gim, "<h2>$1</h2>")
+    .replace(/\*\*(.*?)\*\*/gim, "<strong>$1</strong>")
+    .replace(/`([^`]+)`/gim, "<code>$1</code>");
+
+  const lines = safe.split("\n");
+  let html = "";
+  let inList = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith("- ")) {
+      if (!inList) {
+        html += "<ul>";
+        inList = true;
+      }
+      html += `<li>${trimmed.slice(2)}</li>`;
+      continue;
+    }
+
+    if (inList) {
+      html += "</ul>";
+      inList = false;
+    }
+
+    if (!trimmed) {
+      continue;
+    }
+
+    if (
+      trimmed.startsWith("<h2>") ||
+      trimmed.startsWith("<h3>") ||
+      trimmed.startsWith("<h4>") ||
+      trimmed.startsWith("<pre>")
+    ) {
+      html += trimmed;
+    } else {
+      html += `<p>${trimmed}</p>`;
+    }
+  }
+
+  if (inList) {
+    html += "</ul>";
+  }
+
+  return html;
+}
+
+for (let i = 0; i < noteLinks.length; i++) {
+  noteLinks[i].addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const noteUrl = this.dataset.noteUrl;
+    const noteTitle = this.dataset.noteTitle;
+
+    noteReaderTitle.innerText = noteTitle;
+    noteReaderContent.innerHTML = "<p>Loading note from GitHub...</p>";
+
+    notesList.hidden = true;
+    noteReader.hidden = false;
+    window.scrollTo(0, 0);
+
+    try {
+      const response = await fetch(noteUrl);
+
+      if (!response.ok) {
+        throw new Error(`GitHub returned ${response.status}`);
+      }
+
+      const markdown = await response.text();
+      noteReaderContent.innerHTML = markdownToHtml(markdown);
+    } catch (error) {
+      noteReaderContent.innerHTML = `
+        <p>
+          This note could not be loaded yet.
+        </p>
+        <p>
+          Make sure the GitHub repository is public and the Markdown file exists:
+        </p>
+        <pre><code>${noteUrl}</code></pre>
+      `;
+    }
+  });
+}
+
+if (noteBackBtn) {
+  noteBackBtn.addEventListener("click", function () {
+    noteReader.hidden = true;
+    notesList.hidden = false;
+    noteReaderContent.innerHTML = "";
+    window.scrollTo(0, 0);
+  });
+}

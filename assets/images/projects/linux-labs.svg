@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="40" fill="#1e1e24"/>
+  <rect x="210" y="170" width="780" height="460" rx="32" fill="#101014" stroke="#ffdb70" stroke-width="6"/>
+  <rect x="210" y="170" width="780" height="70" rx="32" fill="#2b2b33"/>
+  <circle cx="260" cy="205" r="10" fill="#ff6b6b"/>
+  <circle cx="295" cy="205" r="10" fill="#ffd166"/>
+  <circle cx="330" cy="205" r="10" fill="#06d6a0"/>
+  <text x="280" y="330" font-family="monospace" font-size="38" fill="#ffdb70">$ sudo systemctl status sshd</text>
+  <text x="280" y="400" font-family="monospace" font-size="38" fill="#f5f5f5">$ firewall-cmd --list-all</text>
+  <text x="280" y="470" font-family="monospace" font-size="38" fill="#9ca3af">$ chmod 640 secure-file</text>
+  <text x="600" y="700" text-anchor="middle" font-family="Arial" font-size="48" font-weight="700" fill="#f5f5f5">Linux Administration Labs</text>
+</svg>

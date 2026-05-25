@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="40" fill="#1e1e24"/>
+  <rect x="260" y="170" width="680" height="460" rx="35" fill="#2b2b33" stroke="#ffdb70" stroke-width="6"/>
+  <rect x="330" y="250" width="540" height="70" rx="18" fill="#3a3a44"/>
+  <rect x="330" y="360" width="540" height="70" rx="18" fill="#3a3a44"/>
+  <rect x="330" y="470" width="540" height="70" rx="18" fill="#3a3a44"/>
+  <circle cx="370" cy="285" r="12" fill="#ffdb70"/>
+  <circle cx="370" cy="395" r="12" fill="#ffdb70"/>
+  <circle cx="370" cy="505" r="12" fill="#ffdb70"/>
+  <text x="430" y="298" font-family="Arial" font-size="32" fill="#f5f5f5">Repair Ticket</text>
+  <text x="430" y="408" font-family="Arial" font-size="32" fill="#f5f5f5">Customer Device</text>
+  <text x="430" y="518" font-family="Arial" font-size="32" fill="#f5f5f5">Service Status</text>
+  <text x="600" y="700" text-anchor="middle" font-family="Arial" font-size="48" font-weight="700" fill="#f5f5f5">TicketFlow C#/.NET Project</text>
+</svg>

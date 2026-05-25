@@ -1880,3 +1880,313 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+/* Joe custom service icons */
+.service-icon-box ion-icon {
+  font-size: 42px;
+  color: var(--orange-yellow-crayola);
+  --ionicon-stroke-width: 34px;
+}
+
+.service-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Joe custom Tools & Platforms section */
+.tools-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 15px;
+  margin: 0 -15px;
+  padding: 25px 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
+
+.tool-item {
+  min-width: max-content;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--border-gradient-onyx);
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  box-shadow: var(--shadow-2);
+  scroll-snap-align: start;
+}
+
+.tool-item::first-letter {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Joe custom Tools & Platforms icons */
+.tool-item {
+  min-width: 145px;
+  min-height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+}
+
+.tool-item img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.tool-item span {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  line-height: 1.3;
+}
+
+.tool-item::first-letter {
+  color: inherit;
+}
+
+/* Joe custom GitHub Notes reader */
+.note-reader {
+  margin-top: 20px;
+}
+
+.note-back-btn {
+  width: max-content;
+  margin-bottom: 20px;
+}
+
+.note-content-card {
+  padding: 25px;
+}
+
+.note-reader-title {
+  margin-bottom: 20px;
+}
+
+.note-reader-content p,
+.note-reader-content li {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+}
+
+.note-reader-content h2,
+.note-reader-content h3,
+.note-reader-content h4 {
+  color: var(--white-2);
+  margin: 22px 0 12px;
+}
+
+.note-reader-content ul {
+  margin: 12px 0 18px 20px;
+}
+
+.note-reader-content code {
+  color: var(--orange-yellow-crayola);
+  font-family: monospace;
+}
+
+.note-reader-content pre {
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.note-reader-content pre code {
+  color: var(--white-2);
+}
+
+/* Joe custom portfolio project buttons */
+.project-card {
+  display: block;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black) !important;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+}
+
+.project-btn-secondary {
+  background: var(--border-gradient-onyx);
+  color: var(--white-2) !important;
+  border: 1px solid var(--jet);
+}
+
+.project-btn:hover {
+  opacity: 0.9;
+}
+
+/* Joe custom compact DevOps Notes cards */
+.blog-posts-list {
+  gap: 18px;
+}
+
+.blog-post-item > a {
+  min-height: auto;
+}
+
+.blog-banner-box {
+  height: 145px;
+}
+
+.blog-banner-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 14px 16px 16px;
+}
+
+.blog-meta {
+  margin-bottom: 8px;
+}
+
+.blog-item-title {
+  margin-bottom: 8px;
+  font-size: var(--fs-5);
+  line-height: 1.35;
+}
+
+.blog-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--fs-7);
+  line-height: 1.5;
+}
+
+/* Joe custom direct contact section */
+.contact-direct-card {
+  padding: 25px;
+}
+
+.contact-direct-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.contact-direct-list {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.contact-direct-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+}
+
+.contact-direct-list ion-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+}
+
+.contact-direct-list a {
+  color: var(--white-2);
+}
+
+.contact-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-direct-btn {
+  width: max-content;
+  min-width: 130px;
+}
+
+/* Joe custom spacing between direct contact and map */
+.contact-direct {
+  margin-bottom: 30px;
+}
+
+.mapbox {
+  margin-top: 10px;
+}
+
+/* Joe custom Tools & Platforms grid layout */
+.tools-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 14px;
+  margin: 0 !important;
+  padding: 20px 0 0 !important;
+  overflow: visible !important;
+  scroll-snap-type: none !important;
+}
+
+.tool-item {
+  min-width: 0 !important;
+  min-height: 92px;
+  padding: 14px 10px;
+  border-radius: 14px;
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.tool-item img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.tool-item span {
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  line-height: 1.3;
+}
+
+/* Better layout on larger screens */
+@media (min-width: 768px) {
+  .tools-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tools-list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
